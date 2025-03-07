@@ -85,17 +85,18 @@ const LegalDocuments: React.FC = () => {
   };
 
   return (
-    <div className="p-6 grid grid-cols-3 gap-6">
+    <div className="p-6 grid grid-cols-4 gap-6 border-1 m-1">
       {Array.from({ length: 9 }).map((_, index) => {
         const file = files[index];
 
         return (
           <Card key={index} onClick={() => handleCardClick(index)}>
             <CardContent>
-              <h3 className="text-lg font-bold">Legal Document {index + 1}</h3>
+              <h4 className="text-md font-bold">Legal Document {index + 1}</h4>
+              <hr/>
               {file ? (
                 <>
-                  <p className="text-sm">Uploaded On: {file.uploadedOn}</p>
+                  <p className="text-sm mt-1">Uploaded On: {file.uploadedOn}</p>
                   <p className="text-sm">File Name: {file.fileName}</p>
                 </>
               ) : (
